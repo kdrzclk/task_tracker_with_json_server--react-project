@@ -60,15 +60,10 @@ function App() {
 
   //* DELETE TASK
   //* Delete task with axios
-  // const deleteTask = async (deletedTaskId) => {
-  //   // console.log(deletedTaskId);
-  //   await axios.delete(`${baseUrl}/${deletedTaskId}`);
-  //   fetchTasks();
-  // };
-
-  const deleteTask = (deletedTaskId) => {
-    // console.log("delete Task", deletedTaskId);
-    setTasks(tasks.filter((task) => task.id !== deletedTaskId));
+  const deleteTask = async (deletedTaskId) => {
+    console.log(deletedTaskId);
+    await axios.delete(`${baseUrl}/${deletedTaskId}`);
+    fetchTasks();
   };
 
   //* TOGGLE DONE
