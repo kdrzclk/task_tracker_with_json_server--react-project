@@ -67,22 +67,13 @@ function App() {
   };
 
   //* TOGGLE DONE
-  // const toggleDone = async (toggleDoneId) => {
-  //   const { data } = await axios.get(`${baseUrl}/${toggleDoneId}`);
-  //   console.log(data);
-  //   // const updatedTask = { ...data, isDone: !data.isDone };
-  //   // await axios.put(`${baseUrl}/${toggleDoneId}`, updatedTask);
-  //   await axios.patch(`${baseUrl}/${toggleDoneId}`, { isDone: !data.isDone });
-  //   fetchTasks();
-  // };
-
-  const toggleDone = (toggleDoneId) => {
-    // console.log("double click", toggleDoneId);
-    setTasks(
-      tasks.map((task) =>
-        task.id === toggleDoneId ? { ...task, isDone: !task.isDone } : task
-      )
-    );
+  const toggleDone = async (toggleDoneId) => {
+    const { data } = await axios.get(`${baseUrl}/${toggleDoneId}`);
+    console.log(data);
+    // const updatedTask = { ...data, isDone: !data.isDone };
+    // await axios.put(`${baseUrl}/${toggleDoneId}`, updatedTask);
+    await axios.patch(`${baseUrl}/${toggleDoneId}`, { isDone: !data.isDone });
+    fetchTasks();
   };
 
   // TOGGLESHOW
