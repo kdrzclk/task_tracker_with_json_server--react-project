@@ -51,18 +51,25 @@ function App() {
   //   fetchTasks();
   // };
 
+  const addTask = async (newTask) => {
+    const res = await fetch(baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newTask),
+    });
+    await res.json();
+    console.log(res);
+    fetchTasks();
+  };
+
   //* Add tasks with axios
   // const addTask = async (newTask) => {
   //   const res = await axios.post(baseUrl, newTask);
   //   console.log(res);
   //   fetchTasks();
   // };
-
-  const addTask = (newTask) => {
-    const id = Math.floor(Math.random() * 1000 + 1);
-    const addNewTask = { id, ...newTask };
-    setTasks([...tasks, addNewTask]);
-  };
 
   //* DELETE TASK
   //* Delete task with axios
