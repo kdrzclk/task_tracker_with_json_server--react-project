@@ -51,25 +51,12 @@ function App() {
   //   fetchTasks();
   // };
 
+  //* Add tasks with axios
   const addTask = async (newTask) => {
-    const res = await fetch(baseUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTask),
-    });
-    await res.json();
+    const res = await axios.post(baseUrl, newTask);
     console.log(res);
     fetchTasks();
   };
-
-  //* Add tasks with axios
-  // const addTask = async (newTask) => {
-  //   const res = await axios.post(baseUrl, newTask);
-  //   console.log(res);
-  //   fetchTasks();
-  // };
 
   //* DELETE TASK
   //* Delete task with axios

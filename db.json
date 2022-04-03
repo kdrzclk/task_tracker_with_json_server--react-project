@@ -29,6 +29,12 @@
       "day": "12:00pm",
       "isDone": false,
       "id": 6
+    },
+    {
+      "text": "get up",
+      "day": "12:00pm",
+      "isDone": false,
+      "id": 7
     }
   ]
 }
