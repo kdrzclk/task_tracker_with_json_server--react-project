@@ -15,23 +15,23 @@ function App() {
 
   //* Fetch Tasks
 
-  // const fetchTasks = async () => {
-  //   try {
-  //     const res = await fetch(baseUrl);
-  //     const data = await res.json();
-  //     // console.log(data);
-  //     setTasks(data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const fetchTasks = async () => {
+    try {
+      const res = await fetch(baseUrl);
+      const data = await res.json();
+      // console.log(data);
+      setTasks(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   //* Fetch tasks with axios
-  const fetchTasks = async () => {
-    // const res = await axios.get(baseUrl);
-    const { data } = await axios.get(baseUrl);
-    setTasks(data);
-  };
+  // const fetchTasks = async () => {
+  //   // const res = await axios.get(baseUrl);
+  //   const { data } = await axios.get(baseUrl);
+  //   setTasks(data);
+  // };
 
   useEffect(() => {
     fetchTasks();
